@@ -8,7 +8,7 @@ const { allRoutes } = require("./routes/allRoutes");
 
 const app = express();
 app.use(express.json());
-let corspolicy = { origin: 'http://localhost:3000' };
+// let corspolicy = { origin: 'http://localhost:3000' };
 app.use(cors(corspolicy));
 
 const db = module.exports = async () =>
