@@ -8,7 +8,7 @@ const { allRoutes } = require("./routes/allRoutes");
 
 const app = express();
 app.use(express.json());
-let corspolicy = { origin: '' };
+let corspolicy = { origin: 'https://nmr-appointment-app.onrender.com/' };
 app.use(cors(corspolicy));
 
 const db = module.exports = async () =>
