@@ -8,9 +8,19 @@ const { allRoutes } = require("./routes/allRoutes");
 
 const app = express();
 app.use(express.json());
-let corspolicy = { origin: 'https://nmr-appointment-app.onrender.com/' };
-app.use(cors(corspolicy));
+// let corspolicy = { origin: 'https://nmr-appointment-app.onrender.com/' };
+// app.use(cors(corspolicy));
 
+app.use((req, res, next) => 
+{
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+  next();
+});
+        
 const db = module.exports = async () =>
 {
   try
